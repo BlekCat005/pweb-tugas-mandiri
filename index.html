@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <header id="navbar">
@@ -222,33 +223,57 @@
     </section>
 
     <section id="contact">
-      <div class="container">
-        <div class="section-header">
-          <h4 class="section-subtitle">Contact</h4>
-          <h2 class="section-title">Hubungi Saya</h2>
-          <p class="section-description">
-            Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu
-            untuk menghubungi saya. Saya selalu terbuka untuk diskusi dan
-            peluang baru.
-          </p>
-        </div>
-        <form class="contact-form">
+      <div class="container" id="contact-container">
+        <h2>Kontak Saya</h2>
+        <form id="contact-form" class="form">
           <div class="form-group">
-            <label for="name">Nama</label>
-            <input type="text" id="name" />
+            <label for="nama">Nama Lengkap:</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              class="form-control"
+              required
+            />
           </div>
+
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" />
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              required
+            />
           </div>
+
           <div class="form-group">
-            <label for="message">Pesan</label>
-            <textarea id="message"></textarea>
+            <label for="hp">Nomor Handphone:</label>
+            <input
+              type="text"
+              id="hp"
+              name="hp"
+              class="form-control"
+              required
+            />
           </div>
-          <div class="form-submit">
-            <button type="submit" class="btn primary-btn">Kirim</button>
+
+          <div class="form-group">
+            <label for="pesan">Pesan:</label>
+            <textarea
+              id="pesan"
+              name="pesan"
+              class="form-control"
+              required
+            ></textarea>
           </div>
+
+          <button type="submit" id="btn-kirim" class="btn btn-primary">
+            Kirim
+          </button>
         </form>
+        <div id="form-alert" class="form-alert" style="margin-top: 10px"></div>
       </div>
     </section>
 
@@ -341,5 +366,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="form-validation.js"></script>
   </body>
 </html>
