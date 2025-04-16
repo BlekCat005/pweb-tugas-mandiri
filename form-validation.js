@@ -26,7 +26,6 @@ $(document).ready(function () {
     } else {
       alertBox.css("color", "green").text("Formulir berhasil dikirim!");
 
-      // ✅ Kosongkan semua input dan textarea
       $("#contact-form")[0].reset();
     }
   });

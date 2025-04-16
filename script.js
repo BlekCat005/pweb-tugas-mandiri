@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Navbar scroll hide/show functionality
   const navbar = document.getElementById("navbar");
   let prevScrollPos = window.scrollY;
 
@@ -7,10 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentScrollPos = window.scrollY;
 
     if (currentScrollPos > prevScrollPos && currentScrollPos > 50) {
-      // Scroll down, hide navbar
       navbar.style.transform = "translateY(-100%)";
     } else {
-      // Scroll up, show navbar
       navbar.style.transform = "translateY(0)";
     }
 
@@ -19,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", handleScroll);
 
-  // Toggle Hamburger Menu
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.getElementById("nav-menu");
 
@@ -28,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     navMenu.classList.toggle("hidden");
   });
 
-  // Click outside hamburger
   window.addEventListener("click", function (e) {
     if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
       hamburger.classList.remove("hamburger-active");
@@ -36,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Smooth scroll for navigation
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -56,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Portfolio data and rendering
   const portfolioData = [
     {
       id: 1,
@@ -88,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  // Render portfolio cards
   const portfolioContainer = document.getElementById("portfolio-container");
 
   portfolioData.forEach((portfolio) => {
@@ -116,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
     portfolioContainer.appendChild(portfolioCard);
   });
 
-  // Clients data and rendering
   const clientsData = [
     {
       id: 1,
@@ -132,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  // Render client logos
   const clientsContainer = document.getElementById("clients-container");
 
   clientsData.forEach((client) => {
@@ -148,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
     clientsContainer.appendChild(clientElement);
   });
 
-  // Contact form handling
   const contactForm = document.querySelector(".contact-form");
 
   if (contactForm) {
@@ -159,13 +148,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const email = document.getElementById("email").value;
       const message = document.getElementById("message").value;
 
-      // Here you would typically send the form data to a server
       console.log("Form submitted:", { name, email, message });
 
-      // Reset form
       contactForm.reset();
 
-      // Show success message
       alert("Pesan berhasil dikirim! Terima kasih telah menghubungi saya.");
     });
   }
