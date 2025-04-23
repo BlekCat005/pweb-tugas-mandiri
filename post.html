@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Cara Membuat Website Responsive dengan Bootstrap 5 - Blog Muhamad Rizki
+    </title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <style>
+      .article-header {
+        position: relative;
+        background-color: #f8f9fa;
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+      }
+      .article-meta {
+        color: #6c757d;
+        margin-bottom: 1.5rem;
+      }
+      .article-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+      .article-content p {
+        margin-bottom: 1.5rem;
+      }
+      .article-content h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .article-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        border-radius: 8px;
+      }
+      .article-content code {
+        background-color: #f8f9fa;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+      }
+      .article-content pre {
+        background-color: #f8f9fa; /* Ubah menjadi latar belakang yang lebih terang */
+        color: #000000; /* Ubah teks menjadi warna hitam */
+        padding: 1.5rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 2rem 0;
+      }
+      .share-buttons .btn {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        line-height: 40px;
+        text-align: center;
+      }
+      .related-post img {
+        height: 180px;
+        object-fit: cover;
+      }
+      .comment {
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .comment:last-child {
+        border-bottom: none;
+      }
+      .comment-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .comment-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .footer {
+        background-color: #212529;
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+      .table-of-contents {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+      .table-of-contents ul {
+        margin-bottom: 0;
+      }
+      blockquote {
+        border-left: 4px solid #0d6efd;
+        padding-left: 1rem;
+        font-style: italic;
+        color: #6c757d;
+        margin: 2rem 0;
+      }
+      .author-bio {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+      .author-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Muhamad Rizki</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="post.html">Artikel</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="container">
+        <span class="badge bg-primary mb-2">Web Development</span>
+        <h1 class="display-5 fw-bold">
+          Cara Membuat Website Responsive dengan Bootstrap 5
+        </h1>
+        <div class="article-meta mt-3">
+          <span><i class="bi bi-person"></i> Muhamad Rizki</span>
+          <span class="ms-3"
+            ><i class="bi bi-calendar3"></i> 23 April 2025</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <!-- Featured Image -->
+          <img
+            src="https://picsum.photos/id/180/1200/600"
+            alt="Cara Membuat Website Responsive"
+            class="img-fluid rounded mb-4"
+          />
+
+          <!-- Table of Contents -->
+          <div class="table-of-contents">
+            <h5>Daftar Isi</h5>
+            <ul>
+              <li><a href="#pendahuluan">Pendahuluan</a></li>
+              <li><a href="#persiapan">Persiapan</a></li>
+              <li><a href="#grid-system">Memahami Grid System</a></li>
+              <li><a href="#komponen">Menggunakan Komponen Bootstrap</a></li>
+              <li><a href="#kustomisasi">Kustomisasi Bootstrap</a></li>
+              <li><a href="#kesimpulan">Kesimpulan</a></li>
+            </ul>
+          </div>
+
+          <!-- Article Content -->
+          <div class="article-content">
+            <h2 id="pendahuluan">Pendahuluan</h2>
+            <p>
+              Di era digital saat ini, memiliki website yang responsif bukan
+              lagi sebuah pilihan, melainkan keharusan. Website responsif adalah
+              website yang dapat menyesuaikan tampilannya dengan baik di
+              berbagai ukuran layar, mulai dari desktop, tablet, hingga
+              smartphone. Salah satu framework CSS yang paling populer untuk
+              membuat website responsif adalah Bootstrap.
+            </p>
+            <p>
+              Bootstrap 5 adalah versi terbaru dari framework Bootstrap yang
+              dirilis pada tahun 2021. Versi ini hadir dengan berbagai
+              peningkatan dan fitur baru yang memudahkan pengembang web dalam
+              membuat website yang responsif dan modern.
+            </p>
+
+            <blockquote>
+              "Bootstrap adalah framework front-end yang paling populer di dunia
+              untuk membangun website dan aplikasi web yang responsif dan
+              mobile-first."
+            </blockquote>
+
+            <h2 id="persiapan">Persiapan</h2>
+            <p>
+              Sebelum mulai menggunakan Bootstrap 5, ada beberapa hal yang perlu
+              disiapkan:
+            </p>
+            <ol>
+              <li>
+                Text editor (seperti Visual Studio Code, Sublime Text, atau
+                Atom)
+              </li>
+              <li>Pengetahuan dasar HTML dan CSS</li>
+              <li>Koneksi internet untuk mengakses CDN Bootstrap</li>
+            </ol>
+            <p>
+              Cara termudah untuk menggunakan Bootstrap 5 adalah dengan
+              menambahkan link CDN ke file HTML Anda:
+            </p>
+            <pre><code>&lt;!-- CSS Bootstrap 5 --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- JavaScript Bootstrap 5 (opsional) --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+
+            <h2 id="grid-system">Memahami Grid System</h2>
+            <p>
+              Salah satu fitur utama Bootstrap yang membuat website menjadi
+              responsif adalah sistem grid. Bootstrap menggunakan sistem grid
+              berbasis flexbox yang terdiri dari 12 kolom.
+            </p>
+            <p>Berikut adalah contoh penggunaan sistem grid Bootstrap:</p>
+            <pre><code>&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-6"&gt;Kolom 1&lt;/div&gt;
+    &lt;div class="col-md-6"&gt;Kolom 2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <p>
+              Pada contoh di atas, kita membuat dua kolom yang masing-masing
+              mengambil setengah dari lebar container pada layar berukuran
+              medium (md) atau lebih besar. Pada layar yang lebih kecil,
+              kolom-kolom tersebut akan otomatis disusun secara vertikal.
+            </p>
+
+            <img
+              src="https://picsum.photos/id/0/800/400"
+              alt="Bootstrap Grid System"
+              class="img-fluid rounded"
+            />
+
+            <h2 id="komponen">Menggunakan Komponen Bootstrap</h2>
+            <p>
+              Bootstrap menyediakan berbagai komponen siap pakai yang dapat
+              digunakan untuk mempercepat proses pengembangan website. Beberapa
+              komponen populer antara lain:
+            </p>
+            <ul>
+              <li>Navbar</li>
+              <li>Card</li>
+              <li>Modal</li>
+              <li>Carousel</li>
+              <li>Form</li>
+              <li>Button</li>
+            </ul>
+            <p>Contoh penggunaan komponen card:</p>
+            <pre><code>&lt;div class="card"&gt;
+  &lt;img src="gambar.jpg" class="card-img-top" alt="..."&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Judul Card&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Deskripsi singkat tentang card ini.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Tombol&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2 id="kustomisasi">Kustomisasi Bootstrap</h2>
+            <p>
+              Meskipun Bootstrap menyediakan desain default yang bagus, Anda
+              mungkin ingin menyesuaikan tampilan website sesuai dengan
+              kebutuhan. Ada beberapa cara untuk mengkustomisasi Bootstrap:
+            </p>
+            <ol>
+              <li>Menggunakan file CSS kustom</li>
+              <li>Menggunakan variabel Sass</li>
+              <li>Menggunakan utilitas Bootstrap</li>
+            </ol>
+            <p>Contoh penggunaan utilitas Bootstrap untuk kustomisasi:</p>
+            <pre><code>&lt;div class="p-3 mb-4 bg-light rounded-3 shadow-sm"&gt;
+  &lt;h2 class="text-primary fw-bold"&gt;Judul Kustom&lt;/h2&gt;
+  &lt;p class="text-muted fs-5"&gt;Teks dengan ukuran dan warna kustom.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+            <h2 id="kesimpulan">Kesimpulan</h2>
+            <p>
+              Bootstrap 5 adalah framework yang sangat powerful untuk membuat
+              website responsif dengan cepat dan mudah. Dengan memahami sistem
+              grid, komponen-komponen yang tersedia, dan cara kustomisasi, Anda
+              dapat membuat website yang tidak hanya responsif tetapi juga unik
+              dan sesuai dengan kebutuhan Anda.
+            </p>
+            <p>
+              Jangan lupa untuk selalu memeriksa dokumentasi resmi Bootstrap
+              untuk informasi lebih lanjut dan update terbaru. Selamat mencoba
+              dan semoga berhasil dalam proyek pengembangan website Anda!
+            </p>
+          </div>
+
+          <!-- Author Bio -->
+          <div class="author-bio d-flex">
+            <div class="author-avatar me-3">
+              <img
+                src="https://picsum.photos/id/1012/200/200"
+                alt="Muhamad Rizki"
+              />
+            </div>
+            <div>
+              <h5>Tentang Penulis</h5>
+              <p class="mb-2">
+                Muhamad Rizki adalah seorang web developer dengan pengalaman
+                lebih dari 5 tahun di bidang pengembangan website dan aplikasi
+                web. Spesialisasi dalam teknologi front-end dan UI/UX design.
+              </p>
+              <div class="social-icons">
+                <a
+                  href="https://github.com/BlekCat005"
+                  class="text-primary"
+                  target="_blank"
+                  ><i class="bi bi-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Share Buttons -->
+          <div class="my-4">
+            <h5>Bagikan Artikel:</h5>
+            <div class="share-buttons mt-2">
+              <a href="#" class="btn btn-primary me-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="btn btn-info text-white me-2"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="btn btn-success me-2"
+                ><i class="bi bi-whatsapp"></i
+              ></a>
+              <a href="#" class="btn btn-danger me-2"
+                ><i class="bi bi-pinterest"></i
+              ></a>
+              <a href="#" class="btn btn-secondary"
+                ><i class="bi bi-link-45deg"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Article Navigation -->
+          <div class="d-flex justify-content-between my-5">
+            <a href="#" class="btn btn-outline-primary">
+              <i class="bi bi-arrow-left me-2"></i>10 Tips Optimasi SEO untuk
+              Website Anda
+            </a>
+            <a href="#" class="btn btn-outline-primary">
+              Prinsip Dasar UI/UX Design yang Perlu Diketahui<i
+                class="bi bi-arrow-right ms-2"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Comments Section -->
+          <div class="mt-5">
+            <h4 class="mb-4">Komentar (5)</h4>
+
+            <!-- Comment 1 -->
+            <div class="comment d-flex">
+              <div class="comment-avatar me-3">
+                <img src="https://picsum.photos/id/1005/100/100" alt="Ahmad" />
+              </div>
+              <div>
+                <div class="d-flex align-items-center mb-2">
+                  <h5 class="mb-0">Ahmad</h5>
+                  <small class="text-muted ms-2">20 April 2023</small>
+                </div>
+                <p>
+                  Artikel yang sangat bermanfaat! Saya baru mulai belajar
+                  Bootstrap dan penjelasan tentang grid system sangat membantu.
+                  Terima kasih!
+                </p>
+                <button class="btn btn-sm btn-light">Balas</button>
+              </div>
+            </div>
+
+            <!-- Comment 2 -->
+            <div class="comment d-flex">
+              <div class="comment-avatar me-3">
+                <img src="https://picsum.photos/id/1027/100/100" alt="Siti" />
+              </div>
+              <div>
+                <div class="d-flex align-items-center mb-2">
+                  <h5 class="mb-0">Siti</h5>
+                  <small class="text-muted ms-2">18 April 2023</small>
+                </div>
+                <p>
+                  Saya suka cara penyajiannya, mudah dipahami. Apakah ada
+                  rencana untuk membuat tutorial tentang integrasi Bootstrap
+                  dengan React?
+                </p>
+                <button class="btn btn-sm btn-light">Balas</button>
+              </div>
+            </div>
+
+            <!-- Comment 3 -->
+            <div class="comment d-flex">
+              <div class="comment-avatar me-3">
+                <img src="https://picsum.photos/id/1025/100/100" alt="Budi" />
+              </div>
+              <div>
+                <div class="d-flex align-items-center mb-2">
+                  <h5 class="mb-0">Budi</h5>
+                  <small class="text-muted ms-2">17 April 2023</small>
+                </div>
+                <p>
+                  Terima kasih atas artikelnya. Saya masih bingung tentang
+                  perbedaan antara container dan container-fluid. Bisa
+                  dijelaskan lebih detail?
+                </p>
+                <button class="btn btn-sm btn-light">Balas</button>
+
+                <!-- Reply to Comment 3 -->
+                <div class="d-flex mt-3">
+                  <div class="comment-avatar me-3">
+                    <img
+                      src="https://picsum.photos/id/1012/100/100"
+                      alt="Muhamad Rizki"
+                    />
+                  </div>
+                  <div>
+                    <div class="d-flex align-items-center mb-2">
+                      <h5 class="mb-0">Muhamad Rizki</h5>
+                      <small class="text-muted ms-2">17 April 2023</small>
+                    </div>
+                    <p>
+                      Halo Budi, terima kasih atas pertanyaannya. Perbedaan
+                      utama adalah container memiliki lebar maksimum yang
+                      berbeda pada setiap breakpoint, sedangkan container-fluid
+                      selalu 100% lebar. Saya akan menambahkan penjelasan ini di
+                      artikel selanjutnya!
+                    </p>
+                    <button class="btn btn-sm btn-light">Balas</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comment 4 -->
+            <div class="comment d-flex">
+              <div class="comment-avatar me-3">
+                <img src="https://picsum.photos/id/1074/100/100" alt="Dewi" />
+              </div>
+              <div>
+                <div class="d-flex align-items-center mb-2">
+                  <h5 class="mb-0">Dewi</h5>
+                  <small class="text-muted ms-2">16 April 2023</small>
+                </div>
+                <p>
+                  Saya sudah mencoba mengikuti tutorial ini dan hasilnya sangat
+                  memuaskan. Website saya sekarang responsif di semua perangkat.
+                  Terima kasih banyak!
+                </p>
+                <button class="btn btn-sm btn-light">Balas</button>
+              </div>
+            </div>
+
+            <!-- Comment 5 -->
+            <div class="comment d-flex">
+              <div class="comment-avatar me-3">
+                <img src="https://picsum.photos/id/1062/100/100" alt="Rudi" />
+              </div>
+              <div>
+                <div class="d-flex align-items-center mb-2">
+                  <h5 class="mb-0">Rudi</h5>
+                  <small class="text-muted ms-2">15 April 2023</small>
+                </div>
+                <p>
+                  Apakah Bootstrap 5 sudah mendukung semua browser? Saya pernah
+                  mengalami masalah kompatibilitas dengan Internet Explorer.
+                </p>
+                <button class="btn btn-sm btn-light">Balas</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment Form -->
+          <div class="mt-5">
+            <h4 class="mb-4">Tulis Komentar</h4>
+            <form>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="nama" class="form-label">Nama</label>
+                  <input type="text" class="form-control" id="nama" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="komentar" class="form-label">Komentar</label>
+                <textarea
+                  class="form-control"
+                  id="komentar"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="notifikasi"
+                />
+                <label class="form-check-label" for="notifikasi">
+                  Beri tahu saya tentang balasan melalui email
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Kirim Komentar
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4 mt-5 mt-lg-0">
+          <!-- Search -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Pencarian</h5>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Cari artikel..."
+                />
+                <button class="btn btn-primary" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Kategori</h5>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Web Development
+                  <span class="badge bg-primary rounded-pill">12</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  UI/UX Design
+                  <span class="badge bg-primary rounded-pill">8</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  JavaScript
+                  <span class="badge bg-primary rounded-pill">10</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Mobile Development
+                  <span class="badge bg-primary rounded-pill">5</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  Database
+                  <span class="badge bg-primary rounded-pill">7</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Popular Posts -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Artikel Populer</h5>
+              <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">
+                      10 Tips Optimasi SEO untuk Website Anda
+                    </h6>
+                    <small class="text-muted">3 hari lalu</small>
+                  </div>
+                  <small class="text-muted">1.2k dibaca</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">
+                      Prinsip Dasar UI/UX Design yang Perlu Diketahui
+                    </h6>
+                    <small class="text-muted">1 minggu lalu</small>
+                  </div>
+                  <small class="text-muted">980 dibaca</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">
+                      Fitur-fitur JavaScript Modern yang Wajib Dikuasai
+                    </h6>
+                    <small class="text-muted">2 minggu lalu</small>
+                  </div>
+                  <small class="text-muted">850 dibaca</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">
+                      Panduan Lengkap Pengembangan Aplikasi Mobile
+                    </h6>
+                    <small class="text-muted">3 minggu lalu</small>
+                  </div>
+                  <small class="text-muted">720 dibaca</small>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Tag</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >Bootstrap</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >CSS</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >HTML</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >Responsive</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >Web Design</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >Frontend</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >Grid</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >Mobile</a
+                >
+                <a
+                  href="#"
+                  class="badge bg-light text-dark text-decoration-none p-2"
+                  >Tutorial</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Berlangganan Newsletter</h5>
+              <p class="card-text">
+                Dapatkan artikel terbaru langsung ke email Anda.
+              </p>
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email Anda"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                  Berlangganan
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="container mt-5">
+      <h3 class="mb-4">Rekomendasi Artikel Lainnya</h3>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 related-post">
+            <img
+              src="https://picsum.photos/id/0/600/400"
+              class="card-img-top"
+              alt="Tips Optimasi SEO"
+            />
+            <div class="card-body">
+              <span class="badge bg-success mb-2">SEO</span>
+              <h5 class="card-title">
+                10 Tips Optimasi SEO untuk Website Anda
+              </h5>
+              <p class="card-text">
+                Tingkatkan peringkat website Anda di mesin pencari dengan 10
+                tips optimasi SEO yang efektif.
+              </p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 related-post">
+            <img
+              src="https://picsum.photos/id/160/600/400"
+              class="card-img-top"
+              alt="UI/UX Design Principles"
+            />
+            <div class="card-body">
+              <span class="badge bg-danger mb-2">UI/UX</span>
+              <h5 class="card-title">
+                Prinsip Dasar UI/UX Design yang Perlu Diketahui
+              </h5>
+              <p class="card-text">
+                Pelajari prinsip-prinsip dasar UI/UX design yang akan membantu
+                Anda membuat antarmuka pengguna yang intuitif.
+              </p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 related-post">
+            <img
+              src="https://picsum.photos/id/48/600/400"
+              class="card-img-top"
+              alt="JavaScript Modern"
+            />
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">JavaScript</span>
+              <h5 class="card-title">
+                Fitur-fitur JavaScript Modern yang Wajib Dikuasai
+              </h5>
+              <p class="card-text">
+                Eksplorasi fitur-fitur JavaScript modern (ES6+) yang akan
+                meningkatkan produktivitas dan kualitas kode Anda.
+              </p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5>Muhamad Rizki</h5>
+            <p>
+              Blog personal tentang teknologi, pengembangan web, dan berbagai
+              tips seputar dunia digital.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5>Kategori</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >UI/UX Design</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >JavaScript</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Mobile Development</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Database</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h5>Kontak</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-envelope me-2"></i> info@muhamadrizki.com</li>
+              <li><i class="bi bi-phone me-2"></i> +62 812 3456 7890</li>
+              <li><i class="bi bi-geo-alt me-2"></i> Jakarta, Indonesia</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 bg-light" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2023 Muhamad Rizki. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
