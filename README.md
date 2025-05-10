@@ -74,5 +74,5 @@ This project is a simple contact form for a personal portfolio website. The form
 
 ## Link GitHub
 
-Silakan akses repository GitHub proyek ini di [link-repo-kamu].
+Silakan akses repository GitHub proyek ini di https://github.com/BlekCat005/pweb-tugas-mandiri.git.
 
